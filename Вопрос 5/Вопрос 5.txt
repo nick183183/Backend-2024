@@ -1,0 +1,32 @@
+CREATE TABLE Users (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    SURNAME VARCHAR(255),
+    DEPARTMENT_ID INT,
+    SALARY INT,
+    FOREIGN KEY (DEPARTMENT_ID) REFERENCES Departments(ID)
+);
+
+
+INSERT INTO Users (ID, SURNAME, DEPARTMENT_ID, SALARY) VALUES
+('Алексеев', 3, 50000),
+('Петрухин', 3, 60000),
+('Есенин', 2, 70000),
+('Маяковский', 1, 80000),
+('Нортон', 4, 90000),
+('Антропов', 1, 100000),
+('Андреев', 4, 110000),
+('Силантьев', 1, 120000);
+
+
+
+CREATE TABLE Department (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    SALARY VARCHAR(50)
+);
+
+
+INSERT INTO Department (ID,SALARY) VALUES
+('Backend'),
+('DevOps'),
+('Android'),
+('iOS');

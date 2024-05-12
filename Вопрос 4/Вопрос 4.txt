@@ -1,0 +1,20 @@
+    public static int binSearch(ArrayList<Integer> list, int target) {
+        int left = 0;
+        int right = list.size() - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (list.get(mid) == target) {
+                return mid;
+            }
+
+            if (list.get(mid) > target) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+
+        return -1;
+    }
