@@ -16,10 +16,10 @@ public class Main {
     public static int[] sort(int[] arrToSort, int[] patternArr) {
 
 
-        ArrayList <Integer> arrHead = new ArrayList<>(); //Лист чисел которые были в массиве B
-        ArrayList <Integer> arrEnd = new ArrayList<>();  //Лист чисел которых не было в массиве B
+        ArrayList <Integer> arrHead = new ArrayList<>(); //Р›РёСЃС‚ С‡РёСЃРµР» РєРѕС‚РѕСЂС‹Рµ Р±С‹Р»Рё РІ РјР°СЃСЃРёРІРµ B
+        ArrayList <Integer> arrEnd = new ArrayList<>();  //Р›РёСЃС‚ С‡РёСЃРµР» РєРѕС‚РѕСЂС‹С… РЅРµ Р±С‹Р»Рѕ РІ РјР°СЃСЃРёРІРµ B
 
-        for (int num:arrToSort) {   //Распределяем числа по листам
+        for (int num:arrToSort) {   //Р Р°СЃРїСЂРµРґРµР»СЏРµРј С‡РёСЃР»Р° РїРѕ Р»РёСЃС‚Р°Рј
             if (findIndex(patternArr,num)!=-1){
                 arrHead.add(num);
             }else{
@@ -29,7 +29,7 @@ public class Main {
 
 
         boolean swapped;
-        for (int i = 0; i < arrHead.size() - 1; i++) {  //Сортируем лист arrHead
+        for (int i = 0; i < arrHead.size() - 1; i++) {  //РЎРѕСЂС‚РёСЂСѓРµРј Р»РёСЃС‚ arrHead
 
             swapped = false;
 
@@ -51,7 +51,7 @@ public class Main {
         }
 
 
-        for (int i = 0; i < arrEnd.size() - 1; i++) { //Сортируем лист arrEnd
+        for (int i = 0; i < arrEnd.size() - 1; i++) { //РЎРѕСЂС‚РёСЂСѓРµРј Р»РёСЃС‚ arrEnd
 
             swapped = false;
 
@@ -73,18 +73,18 @@ public class Main {
         }
 
 
-        arrHead.addAll(arrEnd);//Соединяем листы
+        arrHead.addAll(arrEnd);//РЎРѕРµРґРёРЅСЏРµРј Р»РёСЃС‚С‹
 
         int[] newArray= new int[arrHead.size()];
 
-        for (int i = 0; i < arrHead.size(); i++) {//Преобразуем лист в массив
+        for (int i = 0; i < arrHead.size(); i++) {//РџСЂРµРѕР±СЂР°Р·СѓРµРј Р»РёСЃС‚ РІ РјР°СЃСЃРёРІ
             newArray[i]=arrHead.get(i);
         }
 
         return newArray;
     }
 
-    public static int findIndex(int[] arr, int target) {//Ищет индекс числа в массиве
+    public static int findIndex(int[] arr, int target) {//РС‰РµС‚ РёРЅРґРµРєСЃ С‡РёСЃР»Р° РІ РјР°СЃСЃРёРІРµ
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target) {
                 return i;
